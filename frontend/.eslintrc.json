@@ -1,7 +1,8 @@
 {
   "env": {
     "browser": true,
-    "es6": true
+    "es6": true,
+    "jest": true
   },
   "extends": [
     "plugin:react/recommended",
@@ -31,6 +32,7 @@
     "react/jsx-props-no-spreading": "off",
     "react/prop-types": "off",
     "import/prefer-default-export": "off",
+    "import/no-duplicates": "off",
     "no-use-before-define": "off",
     "no-unused-expressions": "off",
     "@typescript-eslint/no-use-before-define": ["error"],
