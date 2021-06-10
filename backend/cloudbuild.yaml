@@ -1,0 +1,20 @@
+steps:
+  - name: gcr.io/cloud-builders/gsutil
+    entrypoint: bash
+    args:
+      - '-c'
+      - |
+        gsutil cp gs://$PROJECT_ID/secrets/ormconfig.json ./backend/ormconfig.json
+    timeout: '600s'
+  - name: gcr.io/cloud-builders/docker
+    args:
+      [
+        'build',
+        '--compress',
+        '-t',
+        'gcr.io/$PROJECT_ID/back-end-gobarber:latest',
+        './backend',
+      ]
+    timeout: '600s'
+images:
+  - 'gcr.io/$PROJECT_ID/back-end-gobarber:latest'
