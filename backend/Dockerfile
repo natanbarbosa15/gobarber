@@ -12,4 +12,6 @@ RUN yarn build
 
 ENV NODE_ENV=production
 
+EXPOSE 3333
+
 CMD [ "yarn", "production" ]
