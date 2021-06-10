@@ -12,4 +12,4 @@ RUN yarn build
 
 ENV NODE_ENV=production
 
-CMD [ "entrypoint.sh" ]
+CMD [ "yarn", "production" ]
