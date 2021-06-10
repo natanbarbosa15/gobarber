@@ -2,9 +2,9 @@ FROM node:14.17-alpine
 
 WORKDIR /app
 
-COPY ["package.json", "yarn.json", "./"]
+COPY ["package.json", "yarn.lock", "./"]
 
-RUN yarn install --production
+RUN yarn install
 
 COPY . .
 
