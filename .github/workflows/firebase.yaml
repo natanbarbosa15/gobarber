@@ -10,6 +10,10 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
 
+    defaults:
+      run:
+        working-directory: ./frontend
+
     strategy:
       matrix:
         node-version: [14.x]
@@ -21,9 +25,6 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-
-      - name: Go to frontend folder
-        run: cd frontend
 
       - name: Get yarn cache directory path
         id: yarn-cache-dir-path
