@@ -168,6 +168,8 @@ android {
         }
 
         releaseStaging {
+            // signingConfig signingConfigs.release
+
             resValue "string", "CodePushDeploymentKey", '"mMx0sfBhqYvryzvRAAzCwzBhcuKWHF6xVtaXZ"'
             matchingFallbacks = ['release']
         }
@@ -223,6 +225,7 @@ dependencies {
         def hermesPath = "../../node_modules/hermes-engine/android/";
         debugImplementation files(hermesPath + "hermes-debug.aar")
         releaseImplementation files(hermesPath + "hermes-release.aar")
+        releaseStagingImplementation files(hermesPath +"hermes-release.aar")
     } else {
         implementation jscFlavor
     }
